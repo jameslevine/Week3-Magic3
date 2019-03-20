@@ -4,7 +4,6 @@ const recipeInstructions = document.getElementById('recipe-instructions');
 const recipePicture = document.getElementById('recipe-picture');
 const ingredients = document.querySelector('ul');
 
-
 foodButton.addEventListener('click', () => {
   const url = 'https://www.themealdb.com/api/json/v1/1/random.php';
   var xhr = new XMLHttpRequest();
@@ -23,28 +22,49 @@ foodButton.addEventListener('click', () => {
       recipePicture.src = recipePic;
       //recipe ingredients
       let ingGroup = recipeObj.meals[0]
-      let ing = Object.entries(ingGroup).slice(9,29);
-      
-      while(ingredients.firstChild){
+      let ing = Object.entries(ingGroup).slice(9, 29);
+      let mea = Object.entries(ingGroup).slice(29, 49);
+      console.log(mea);
+
+      const ingArr = [];
+      const meaArr = [];
+      const finArr = [];
+
+      while (ingredients.firstChild) {
         ingredients.removeChild(ingredients.firstChild)
       };
-      
+
       ing.map(x => {
-        if(x[1] !== "" ){
-          let ingredientsLi = document.createElement('LI');
-          let ingredientText = document.createTextNode(x[1]);
-          ingredientsLi.appendChild(ingredientText);
-          ingredients.appendChild(ingredientsLi);
+        if (x[1] !== "") {
+          if (x[1] !== null) {
+            ingArr.push(x[1]);
+          }
         }
-        
+
       });
 
+      mea.map(x => {
+        if (x[1] !== "") {
+          if (x[1] !== null) {
+            meaArr.push(x[1]);
+          }
+        };
+      });
+      console.log(ingArr);
+      console.log(meaArr);
 
-      console.log(ing);
+      for (let i = 0; i < ingArr.length; i++) {
+        finArr.push(ingArr[i] + ": " + meaArr[i]);
+      };
 
-      // function listIngredients() {
-      //   for(let i=0; i<)
-      // }
+      console.log(finArr);
+
+      finArr.map(x => {
+        let ingredientsLi = document.createElement('LI');
+        let ingredientText = document.createTextNode(x);
+        ingredientsLi.appendChild(ingredientText);
+        ingredients.appendChild(ingredientsLi);
+      });
     }
   };
   xhr.open('GET', url, true);
