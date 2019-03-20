@@ -2,7 +2,7 @@ const foodButton = document.getElementById('random-food-button');
 const recipeContent = document.getElementById('recipe-display');
 const recipeInstructions = document.getElementById('recipe-instructions');
 const recipePicture = document.getElementById('recipe-picture');
-
+const ingredients = document.querySelector('ul');
 
 
 foodButton.addEventListener('click', () => {
@@ -25,10 +25,12 @@ foodButton.addEventListener('click', () => {
       let ingGroup = recipeObj.meals[0]
       let ing = Object.entries(ingGroup).slice(9,29);
       
+      while(ingredients.firstChild){
+        ingredients.removeChild(ingredients.firstChild)
+      };
       
       ing.map(x => {
-        if(x[1] !== ""){
-          const ingredients = document.querySelector('ul');
+        if(x[1] !== "" ){
           let ingredientsLi = document.createElement('LI');
           let ingredientText = document.createTextNode(x[1]);
           ingredientsLi.appendChild(ingredientText);
