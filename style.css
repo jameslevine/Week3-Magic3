@@ -1,6 +1,6 @@
 body {
     background-color: #221F1F;
-    
+
 }
 .outer-container {
     display: flex;
@@ -39,7 +39,7 @@ body {
     font-size: 1rem;
     color: white;
     border-radius: 10px;
-    background-color: #E50914; 
+    background-color: #E50914;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -112,10 +112,47 @@ body {
 }
 
 #recipe-instructions, li, .title , #movie-description{
+    display:none;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 #recipe-instructions, #movie-description {
     padding: 10px;
+}
+
+.food-container:hover #recipe-instructions {
+  display:block;
+}
+
+.food-container:hover #recipe-display {
+  display:block;
+}
+
+.food-container:hover #movie-display {
+  display:block;
+}
+
+.food-container:hover ul > li{
+  display:block;
+}
+
+.movie-container:hover #movie-description{
+  display: block;
+}
+
+#movie-display {
+  display:none;
+}
+
+#recipe-display {
+  display:block;
+}
+
+#recipe-ingredients {
+  display:none;
+}
+
+#movie-description {
+  display: none;
 }
