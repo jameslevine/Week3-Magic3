@@ -94,6 +94,8 @@ body {
 
 .food-container img , .movie-container img{
     width: 100%;
+    object-fit: cover;
+    height: 300px;
     margin:10px auto;
     display:block;
 }
@@ -146,7 +148,7 @@ body {
 }
 
 #recipe-display {
-  display:block;
+  display:none;
 }
 
 #recipe-ingredients {
