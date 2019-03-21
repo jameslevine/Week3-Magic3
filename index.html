@@ -11,16 +11,21 @@
   </head>
   <body>
     <img src="https://fontmeme.com/permalink/190321/b87aac5c87b4f915c90b067642cefca6.png" alt="FoodFlix" id="foodflix"></img>
-    <button id="random-food-button">Press Me!</button>
+    <div id="btn-cont" class="button-container">
+        <p class="intro">Indecisive af? No worries</p>
+        <button id="random-food-button" class="button-start">Press Me!</button>
+    </div>
+    
     <div class="outer-container">
-        <section class="food-container">
+        <section class="food-container ">
             <!-- <p>Recipes</p> -->
             <div class="recipe-title title" id="recipe-display" style="display:block;"></div>
             <img id="recipe-picture"></img>
             <ul class="recipe-ingredients"></ul>
             <div id="recipe-instructions"></div>
           </section>
-          <section class="movie-container">
+          <section class="pluss" style="display: none">+</section>
+          <section class="movie-container ">
               <!-- <p>Movies</p> -->
               <div class="movie-title title" id="movie-display" style="display:block;"></div>
               <img id="movie-picture"></img>

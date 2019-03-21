@@ -9,6 +9,11 @@ const moviePicture = document.getElementById('movie-picture');
 const movieDescription = document.getElementById('movie-description');
 const movieExtra = document.getElementById('movie-extra');
 
+const movieSectionBorder = document.querySelector('.movie-container');
+const foodSectionBorder = document.querySelector('.food-container');
+const buttonContainer = document.getElementById('btn-cont');
+const infoTxt = document.querySelector('.intro');
+
 // function splitterFunc() {
 //   return foodApi();
 // };
@@ -16,6 +21,12 @@ const movieExtra = document.getElementById('movie-extra');
 foodButton.addEventListener('click', function() {
   foodApi();
   movieApi();
+  movieSectionBorder.classList.add('container-border');
+  foodSectionBorder.classList.add('container-border');
+  //buttonContainer.removeChild(buttonContainer.firstChild);
+  buttonContainer.classList.remove('button-container');
+  buttonContainer.querySelector('.intro').remove();
+  
 });
 
 function foodApi() {

@@ -11,20 +11,69 @@ body {
 #foodflix {
     margin:0 auto;
     display:block;
+    padding-top:10px;
 }
+.button-container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+.button-container p {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 #random-food-button {
     width: 10rem;
     height: 2rem;
-    font-size: 1rem;
-    color: white;
     margin:0 auto;
     display:block;
+    font-size: 1rem;
+    color: white;
     border-radius: 10px;
     background-color: #E50914;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    font-family: Arial, Helvetica, sans-serif;
 }
-.food-container , .movie-container{
+
+
+
+.food-container , .movie-container {
+    width: 90vw;
+    max-width: 400px ;
+    height:100%;
+    margin:4rem auto;
+    display:block;
+    /* border: solid 1px white;
+    border-radius: 10px; */
+}
+
+.pluss {
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.container-border {
+    border: solid 1px white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px 0px white;
+}
+
+/* .movie-container {
     width: 90vw;
     max-width: 400px ;
     height:100%;
@@ -32,13 +81,15 @@ body {
     display:block;
     border: solid 1px white;
     border-radius: 10px;
-}
+} */
 
 .recipe-title, .movie-title{
     width: 100%;
     text-align: center;
-    font-family: 'Anton', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
     font-size: 2rem;
+    padding: 10px;
 }
 
 .food-container img , .movie-container img{
