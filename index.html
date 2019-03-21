@@ -8,14 +8,25 @@
     <title>Design My Night</title>
   </head>
   <body>
-    <section class="section-container">
-      <p class="section">Recipes</p>
-      <div id="recipe-display"></div>
-      <img id="recipe-picture"></img> 
-      <div id="recipe-instructions"></div>
-      <ul></ul>
-      <button id="random-food-button">Press Me!</button>
-    </section>
+    <h1>FoodFlix</h1>
+    <button id="random-food-button">Press Me!</button>
+    <div class="outer-container">
+        <section class="food-container">
+            <p>Recipes</p>
+            <div class="recipe-title" id="recipe-display"></div>
+            <img id="recipe-picture"></img> 
+            <ul></ul>
+            <div id="recipe-instructions"></div>
+          </section>
+          <section class="movie-container">
+              <p>Movies</p>
+              <div class="movie-title" id="movie-display"></div>
+              <img id="movie-picture"></img> 
+              <div id="movie-description"></div>
+              <div id="movie-extra"></div>
+            </section>
+    </div>
+    
 
     <script src="script.js"></script>
   </body>
