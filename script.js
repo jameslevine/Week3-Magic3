@@ -12,6 +12,11 @@ const movieExtra = document.getElementById('movie-extra');
 foodButton.addEventListener('click', function() {
   foodApi();
   movieApi();
+  movieSectionBorder.classList.add('container-border');
+  foodSectionBorder.classList.add('container-border');
+  //buttonContainer.removeChild(buttonContainer.firstChild);
+  buttonContainer.classList.remove('button-container');
+  buttonContainer.querySelector('.intro').remove();
 });
 
 let a = document.getElementById('foodSelector');
