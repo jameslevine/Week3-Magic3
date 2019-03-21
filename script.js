@@ -9,15 +9,6 @@ const moviePicture = document.getElementById('movie-picture');
 const movieDescription = document.getElementById('movie-description');
 const movieExtra = document.getElementById('movie-extra');
 
-const movieSectionBorder = document.querySelector('.movie-container');
-const foodSectionBorder = document.querySelector('.food-container');
-const buttonContainer = document.getElementById('btn-cont');
-const infoTxt = document.querySelector('.intro');
-
-// function splitterFunc() {
-//   return foodApi();
-// };
-
 foodButton.addEventListener('click', function() {
   foodApi();
   movieApi();
@@ -26,8 +17,25 @@ foodButton.addEventListener('click', function() {
   //buttonContainer.removeChild(buttonContainer.firstChild);
   buttonContainer.classList.remove('button-container');
   buttonContainer.querySelector('.intro').remove();
-  
 });
+
+let a = document.getElementById('foodSelector');
+a.addEventListener(
+  'change',
+  function() {
+    console.log(this.value);
+  },
+  false
+);
+
+let b = document.getElementById('movieSelector');
+b.addEventListener(
+  'change',
+  function() {
+    console.log(this.value);
+  },
+  false
+);
 
 function foodApi() {
   const url = 'https://www.themealdb.com/api/json/v1/1/random.php';
@@ -38,13 +46,26 @@ function foodApi() {
 
       //recipe name
       let recipeName = recipeObj.meals[0].strMeal;
-      recipeContent.textContent = recipeName;
+
       //recipe instructions
       let recipeInstructionsContent = recipeObj.meals[0].strInstructions;
-      recipeInstructions.textContent = recipeInstructionsContent;
+
       //recipe picture
       let recipePic = recipeObj.meals[0].strMealThumb;
+
+      if (a.value === recipeObj.meals[0].strCategory) {
+        console.log(true);
+      } else if (a.value === '0') {
+        alert('choose option');
+      } else {
+        foodApi();
+      }
+      recipeContent.textContent = recipeName;
+      recipeInstructions.textContent = recipeInstructionsContent;
       recipePicture.src = recipePic;
+      console.log(recipeObj.meals[0].strCategory);
+      console.log(a.value);
+
       //recipe ingredients
       let ingGroup = recipeObj.meals[0];
       let ing = Object.entries(ingGroup).slice(9, 29);
@@ -95,6 +116,14 @@ function movieApi() {
     if (this.readyState == 4 && this.status == 200) {
       let movieObj = JSON.parse(xhr.responseText);
       console.log(movieObj.results[0]);
+      //console.log(movieObj.results[0].genre_ids[0]);
+      // if (b.value === movieObj.results[0].genre_ids[0]) {
+      //   console.log(true);
+      // } else if (b.value === '0') {
+      //   alert('choose option');
+      // } else {
+      //   movieApi();
+      // }
 
       let movieTitleEl = movieObj.results[0].original_title;
       let moviePictureEl = movieObj.results[0].poster_path;
@@ -108,4 +137,4 @@ function movieApi() {
   };
   xhr.open('GET', url, true);
   xhr.send();
-};
+}
