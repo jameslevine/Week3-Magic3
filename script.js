@@ -13,6 +13,7 @@ const movieSectionBorder = document.querySelector('.movie-container');
 const foodSectionBorder = document.querySelector('.food-container');
 const buttonContainer = document.getElementById('btn-cont');
 const infoTxt = document.querySelector('.intro');
+const pluss = document.querySelector('.pluss');
 
 // function splitterFunc() {
 //   return foodApi();
@@ -26,6 +27,7 @@ foodButton.addEventListener('click', function() {
   //buttonContainer.removeChild(buttonContainer.firstChild);
   buttonContainer.classList.remove('button-container');
   buttonContainer.querySelector('.intro').remove();
+  pluss.removeAttribute('style');
   
 });
 
