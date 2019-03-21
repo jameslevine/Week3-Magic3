@@ -43,6 +43,8 @@ body {
 
 .food-container img , .movie-container img{
     width: 100%;
+    object-fit: cover;
+    height: 300px;
     margin:10px auto;
     display:block;
 }
@@ -74,8 +76,28 @@ body {
   display:block;
 }
 
+.food-container:hover #recipe-display {
+  display:block;
+}
+
+.food-container:hover #movie-display {
+  display:block;
+}
+
 .food-container:hover ul > li{
   display:block;
+}
+
+.movie-container:hover #movie-description{
+  display: block;
+}
+
+#movie-display {
+  display:none;
+}
+
+#recipe-display {
+  display:none;
 }
 
 #recipe-ingredients {
@@ -84,8 +106,4 @@ body {
 
 #movie-description {
   display: none;
-}
-
-.movie-container:hover #movie-description{
-  display: block;
 }
