@@ -1,70 +1,76 @@
 body {
-    background-color: #221F1F;
-    
+  background-color: #221f1f;
 }
 .outer-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 #foodflix {
-    margin:0 auto;
-    display:block;
+  margin: 0 auto;
+  display: block;
 }
 
 #random-food-button {
-    width: 10rem;
-    height: 2rem;
-    font-size: 1rem;
-    color: white;
-    margin:0 auto;
-    display:block;
-    border-radius: 10px;
-    background-color: #E50914; 
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 10rem;
+  height: 2rem;
+  font-size: 1rem;
+  color: white;
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+  background-color: #e50914;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-.food-container , .movie-container{
-    width: 90vw;
-    max-width: 400px ;
-    height:auto;
-    margin:2rem auto;
-    display:block;
-    border: solid 1px white;
-    border-radius: 10px;
-}
-
-.recipe-title, .movie-title{
-    width: 100%;
-    text-align: center;
-    font-family: 'Anton', sans-serif;
-    font-size: 2rem;
+.food-container,
+.movie-container {
+  width: 90vw;
+  max-width: 400px;
+  height: auto;
+  margin: 2rem auto;
+  display: block;
+  border: solid 1px white;
+  border-radius: 10px;
 }
 
-.food-container img , .movie-container img{
-    width: 100%;
-    margin:10px auto;
-    display:block;
+.recipe-title,
+.movie-title {
+  width: 100%;
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  font-size: 2rem;
+}
+
+.food-container img,
+.movie-container img {
+  width: 100%;
+  margin: 10px auto;
+  display: block;
 }
 
 .food-container li {
-    list-style: inside square;
-    margin-left: 20px;
+  list-style: inside square;
+  margin-left: 20px;
 }
 
 .food-container ul {
-    margin-bottom: 20px;
-
+  margin-bottom: 20px;
 }
 
-#recipe-instructions, li{
+#recipe-instructions,
+li {
 }
 
-#recipe-instructions, li, .title , #movie-description{
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
+#recipe-instructions,
+li,
+.title,
+#movie-description {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-#recipe-instructions, #movie-description {
-    padding: 10px;
+#recipe-instructions,
+#movie-description {
+  padding: 10px;
 }
