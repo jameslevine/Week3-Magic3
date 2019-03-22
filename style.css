@@ -171,8 +171,9 @@ body {
 .select-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 10px;
-  
+
 }
 #foodSelector, #movieSelector{
     background-color: white;
