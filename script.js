@@ -17,10 +17,6 @@ const pluss = document.querySelector('.pluss');
 const foodSectionContainers = document.querySelector('.food-container');
 const movieSectionContainers = document.querySelector('.movie-container');
 
-// function splitterFunc() {
-//   return foodApi();
-// };
-
 foodButton.addEventListener('click', function() {
   foodApi();
   movieApi();
@@ -130,15 +126,16 @@ const movieApi = () => {
     if (this.readyState == 4 && this.status == 200) {
       const movieObj = JSON.parse(xhr.responseText);
       console.log(movieObj.results[0]);
-      //console.log(movieObj.results[0].genre_ids[0]);
-      // if (b.value === movieObj.results[0].genre_ids[0]) {
-      //   console.log(true);
-      // } else if (b.value === '0') {
-      //   alert('choose option');
-      // } else {
-      //   movieApi();
-      // }
-
+      console.log(typeof movieObj.results[0].genre_ids[0]);
+      console.log(typeof parseInt(b.value));
+      console.log(movieObj.results[0].genre_ids.includes(10749));
+      if (movieObj.results[0].genre_ids.includes(parseInt(b.value))) {
+        console.log(true);
+      } else if (b.value === '0') {
+        alert('choose option');
+      } else {
+        movieApi();
+      }
       const movieTitleEl = movieObj.results[0].original_title;
       const moviePictureEl = movieObj.results[0].poster_path;
       const moviePath = `http://image.tmdb.org/t/p/w500/${moviePictureEl}`;
