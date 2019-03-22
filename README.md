@@ -1,8 +1,10 @@
-# Read Me
+# FoodFlix
 
 # To run FoodFlix
 
 1. Open webpage [https://fac-sixteen.github.io/Week3-Magic3/](https://)
+
+![](https://media.giphy.com/media/qC5abwZ54KV6U/giphy.gif)
 
 # To run the project locally 💻
 
@@ -65,6 +67,8 @@ Some features we wanted to add if we had a bit more time.
 
 1. Spinning wheel. 
 
+![](https://media.giphy.com/media/3o6MbqNPaatT8nnEmk/giphy.gif)
+ 
 Runs through all selections similar to a slot machine, before picking a final option.
 
 2. Fortune Cookie Api idea. 
