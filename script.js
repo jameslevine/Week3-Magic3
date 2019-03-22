@@ -78,32 +78,32 @@ function foodApi() {
 
       //recipe ingredients
       const ingGroup = recipeObj.meals[0];
-      const ing = Object.entries(ingGroup).slice(9, 29);
-      const mea = Object.entries(ingGroup).slice(29, 49);
+      const ingredient = Object.entries(ingGroup).slice(9, 29);
+      const measure = Object.entries(ingGroup).slice(29, 49);
 
-      const ingArr = [];
-      const meaArr = [];
+      const ingredientArr = [];
+      const measureArr = [];
       const finArr = [];
       while (ingredients.firstChild) {
         ingredients.removeChild(ingredients.firstChild);
       }
-      ing.map(x => {
+      ingredient.map(x => {
         if (x[1] !== '') {
           if (x[1] !== null) {
-            ingArr.push(x[1]);
+            ingredientArr.push(x[1]);
           }
         }
       });
-      mea.map(x => {
+      measure.map(x => {
         if (x[1] !== '') {
           if (x[1] !== null) {
-            meaArr.push(x[1]);
+            measureArr.push(x[1]);
           }
         }
       });
 
-      for (let i = 0; i < ingArr.length; i++) {
-        finArr.push(ingArr[i] + ': ' + meaArr[i]);
+      for (let i = 0; i < ingredientArr.length; i++) {
+        finArr.push(ingredientArr[i] + ': ' + measureArr[i]);
       }
 
       finArr.map(x => {
