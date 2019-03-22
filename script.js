@@ -31,7 +31,7 @@ foodButton.addEventListener('click', function() {
   pluss.removeAttribute('style');
   foodSectionContainers.removeAttribute('style');
   movieSectionContainers.removeAttribute('style');
-  
+
 });
 
 let a = document.getElementById('foodSelector');
