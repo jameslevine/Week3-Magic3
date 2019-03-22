@@ -56,16 +56,31 @@
             <!-- <p>Recipes</p> -->
             <div class="recipe-title title" id="recipe-display" style="display:block;"></div>
             <img id="recipe-picture"></img>
-            <ul class="recipe-ingredients"></ul>
-            <div id="recipe-instructions"></div>
+
+            <label class="toggleLabel" for="toggle">Expand for instructions </label>
+            <input id="toggle" type="checkbox" >
+            <div id="expand">
+              <section>
+                <ul class="recipe-ingredients"></ul>
+                <div id="recipe-instructions"></div>
+              </section>
+            </div>
           </section>
           <section class="pluss" style="display: none">+</section>
           <section class="movie-container" style="display:none;">
               <!-- <p>Movies</p> -->
               <div class="movie-title title" id="movie-display" style="display:block;"></div>
               <img id="movie-picture"></img>
-              <div id="movie-description"></div>
-              <div id="movie-extra"></div>
+              
+              <label class="toggleLabel" for="toggleMovie">Expand for description </label>
+            <input id="toggleMovie" type="checkbox" >
+            <div id="expandMovie">
+              <section>
+                  <div id="movie-description"></div>
+                  <div id="movie-extra"></div>
+              </section>
+            </div>
+             
             </section>
     </div>
     <script src="script.js"></script>
