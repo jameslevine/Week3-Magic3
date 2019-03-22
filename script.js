@@ -31,10 +31,9 @@ foodButton.addEventListener('click', function() {
   pluss.removeAttribute('style');
   foodSectionContainers.removeAttribute('style');
   movieSectionContainers.removeAttribute('style');
-  
 });
 
-let a = document.getElementById('foodSelector');
+const a = document.getElementById('foodSelector');
 a.addEventListener(
   'change',
   function() {
@@ -43,7 +42,7 @@ a.addEventListener(
   false
 );
 
-let b = document.getElementById('movieSelector');
+const b = document.getElementById('movieSelector');
 b.addEventListener(
   'change',
   function() {
@@ -54,19 +53,19 @@ b.addEventListener(
 
 function foodApi() {
   const url = 'https://www.themealdb.com/api/json/v1/1/random.php';
-  var xhr = new XMLHttpRequest();
+  const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      let recipeObj = JSON.parse(xhr.responseText);
+      const recipeObj = JSON.parse(xhr.responseText);
 
       //recipe name
-      let recipeName = recipeObj.meals[0].strMeal;
+      const recipeName = recipeObj.meals[0].strMeal;
 
       //recipe instructions
-      let recipeInstructionsContent = recipeObj.meals[0].strInstructions;
+      const recipeInstructionsContent = recipeObj.meals[0].strInstructions;
 
       //recipe picture
-      let recipePic = recipeObj.meals[0].strMealThumb;
+      const recipePic = recipeObj.meals[0].strMealThumb;
 
       if (a.value === recipeObj.meals[0].strCategory) {
         console.log(true);
@@ -82,9 +81,9 @@ function foodApi() {
       console.log(a.value);
 
       //recipe ingredients
-      let ingGroup = recipeObj.meals[0];
-      let ing = Object.entries(ingGroup).slice(9, 29);
-      let mea = Object.entries(ingGroup).slice(29, 49);
+      const ingGroup = recipeObj.meals[0];
+      const ing = Object.entries(ingGroup).slice(9, 29);
+      const mea = Object.entries(ingGroup).slice(29, 49);
 
       const ingArr = [];
       const meaArr = [];
@@ -112,8 +111,8 @@ function foodApi() {
       }
 
       finArr.map(x => {
-        let ingredientsLi = document.createElement('LI');
-        let ingredientText = document.createTextNode(x);
+        const ingredientsLi = document.createElement('LI');
+        const ingredientText = document.createTextNode(x);
         ingredientsLi.appendChild(ingredientText);
         ingredients.appendChild(ingredientsLi);
       });
@@ -123,13 +122,13 @@ function foodApi() {
   xhr.send();
 }
 
-function movieApi() {
-  let randomNumber = Math.floor(Math.random() * 100 + 1);
+const movieApi = () => {
+  const randomNumber = Math.floor(Math.random() * 100 + 1);
   const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=e0cf38b285b4edbae61d3cb5b6086614&language=en-US&page=${randomNumber}`;
-  var xhr = new XMLHttpRequest();
+  const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      let movieObj = JSON.parse(xhr.responseText);
+      const movieObj = JSON.parse(xhr.responseText);
       console.log(movieObj.results[0]);
       //console.log(movieObj.results[0].genre_ids[0]);
       // if (b.value === movieObj.results[0].genre_ids[0]) {
@@ -140,10 +139,10 @@ function movieApi() {
       //   movieApi();
       // }
 
-      let movieTitleEl = movieObj.results[0].original_title;
-      let moviePictureEl = movieObj.results[0].poster_path;
-      let moviePath = `http://image.tmdb.org/t/p/w500/${moviePictureEl}`;
-      let movieDescriptionEl = movieObj.results[0].overview;
+      const movieTitleEl = movieObj.results[0].original_title;
+      const moviePictureEl = movieObj.results[0].poster_path;
+      const moviePath = `http://image.tmdb.org/t/p/w500/${moviePictureEl}`;
+      const movieDescriptionEl = movieObj.results[0].overview;
 
       movieTitle.textContent = movieTitleEl;
       movieDescription.textContent = movieDescriptionEl;
@@ -152,4 +151,4 @@ function movieApi() {
   };
   xhr.open('GET', url, true);
   xhr.send();
-}
+};
