@@ -14,6 +14,8 @@ const foodSectionBorder = document.querySelector('.food-container');
 const buttonContainer = document.getElementById('btn-cont');
 const infoTxt = document.querySelector('.intro');
 const pluss = document.querySelector('.pluss');
+const foodSectionContainers = document.querySelector('.food-container');
+const movieSectionContainers = document.querySelector('.movie-container');
 
 // function splitterFunc() {
 //   return foodApi();
@@ -24,10 +26,11 @@ foodButton.addEventListener('click', function() {
   movieApi();
   movieSectionBorder.classList.add('container-border');
   foodSectionBorder.classList.add('container-border');
-  //buttonContainer.removeChild(buttonContainer.firstChild);
   buttonContainer.classList.remove('button-container');
   buttonContainer.querySelector('.intro').remove();
   pluss.removeAttribute('style');
+  foodSectionContainers.removeAttribute('style');
+  movieSectionContainers.removeAttribute('style');
   
 });
 

@@ -54,7 +54,6 @@ body {
     height:100%;
     margin:4rem auto;
     display:block;
-    background-color: #221F1F;
     /* border: solid 1px white;
     border-radius: 10px; */
 }
@@ -83,6 +82,7 @@ body {
     border: solid 1px white;
     border-radius: 10px;
     box-shadow: 0px 4px 15px 0px white;
+    background-color: #221F1F;
 }
 
 /* .movie-container {
@@ -110,6 +110,7 @@ body {
     height: 300px;
     margin:10px auto;
     display:block;
+    border:none;
 }
 
 .food-container li {
